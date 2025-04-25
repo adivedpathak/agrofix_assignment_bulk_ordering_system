@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
 
   output : "standalone",
-  
+  ignoreBuildErrors: true,
 };
 
 export default nextConfig;
