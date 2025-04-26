@@ -2,13 +2,19 @@
 
 import { useEffect, useState } from 'react';
 
+// Define the type for items
+interface Item {
+  id: number;
+  name: string;
+  description: string;
+}
+
 export default function Page() {
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<Item[]>([]);  // Use the Item type
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Fetch data from API
   const fetchItems = async () => {
     const res = await fetch('/api/items');
     const data = await res.json();
